@@ -54,7 +54,7 @@ echo "--------------------------------"
 set +e
 
 echo -n "Checking Bazel (5.2.0) - "
-BAZEL_BIN_PATH="$(type -P bazel-5.2.0)"
+BAZEL_BIN_PATH="$(type -P bazel)"
 if [ -z "$BAZEL_BIN_PATH" ]; then
 	echo "ERROR: Bazel (5.2.0) is not installed"
 	exit 1
@@ -123,7 +123,7 @@ elif [ "$CONFIG" = "release" ]; then
 	BAZEL_CONFIG="opt"
 fi
 
-bazel-5.2.0 build -c "$BAZEL_CONFIG" \
+bazel build -c "$BAZEL_CONFIG" \
 	--action_env PYTHON_BIN_PATH="$PYTHON_BIN_PATH" \
 	--define MEDIAPIPE_DISABLE_GPU=1 \
 	mediapipe/c:mediapipe

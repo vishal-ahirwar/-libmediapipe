@@ -11,6 +11,8 @@ cc_binary(
         "//mediapipe/modules/face_landmark:face_landmark_with_attention.tflite",
         "//mediapipe/modules/hand_landmark:hand_landmark_full.tflite",
         "//mediapipe/modules/palm_detection:palm_detection_full.tflite",
+	"//mediapipe/modules/selfie_segmentation:selfie_segmentation.tflite",
+	"//mediapipe/modules/selfie_segmentation:selfie_segmentation_landscape.tflite",
     ],
     deps = [
         "//mediapipe/framework:calculator_framework",
@@ -27,6 +29,7 @@ cc_binary(
         
         "//mediapipe/graphs/face_mesh:desktop_live_calculators",
         "//mediapipe/modules/hand_landmark:hand_landmark_tracking_cpu",
+ 	"//mediapipe/modules/selfie_segmentation:selfie_segmentation_cpu"
     ],
     linkshared = 1,
 )
